@@ -37,7 +37,7 @@ export const Navbar = () => {
         borderWidth={"thin"}
         boxShadow={useColorModeValue("3xl", "2xl")}
       >
-        <NavLayout onClickMenu={onOpen} isMenuOpen={isOpen} />
+        <NavLayout onClickMenu={onOpen} isMenuOpen={isOpen} onToggleMode={undefined} menuButtonRef={undefined} />
         <Drawer
           placement="left"
           initialFocusRef={menuButtonRef}
@@ -51,8 +51,7 @@ export const Navbar = () => {
               <NavLayout
                 onClickMenu={onClose}
                 isMenuOpen={isOpen}
-                menuButtonRef={menuButtonRef}
-              />
+                menuButtonRef={menuButtonRef} onToggleMode={undefined}             />
             </DrawerHeader>
             <DrawerBody>
               {/* <NavAccordion /> */}
