@@ -5,6 +5,6 @@ export const DeadlyTheme = extendTheme(proTheme, {
   colors: { ...baseTheme.colors, brand: baseTheme.colors.blue },
   fonts: {
     heading: "'Josefin Sans', -apple-system, system-ui, sans-serif",
-    body: "'Share Tech Mono', -apple-system, system-ui, sans-serif",
+  //  body: "'Share Tech Mono', -apple-system, system-ui, sans-serif",
   },
 });

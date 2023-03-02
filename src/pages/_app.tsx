@@ -5,7 +5,6 @@ import Head from "next/head";
 import { DeadlyTheme } from "@/Components/UI/Theme";
 import { Oswald } from "next/font/google";
 import "@fontsource/josefin-sans"
-import "@fontsource/share-tech-mono"
 
 const oswald = Oswald({ subsets: ["latin"] });
 
