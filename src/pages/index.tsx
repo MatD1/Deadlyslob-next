@@ -23,12 +23,14 @@ import { UserInfo } from "@/Components/Home/UserInfo";
 import { FollowerCount } from "@/Components/Home/FollowerCount";
 import { FiTwitter, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaTiktok, FaTshirt } from "react-icons/fa";
+import Metatags from "@/Components/MetaTags";
 
 export default function Home() {
   const src = "/deadlyLarge.jpg";
   const name = "Deadlyslob";
   return (
     <>
+      <Metatags />
       <PageWrapper>
         <VStack>
           <Box>
