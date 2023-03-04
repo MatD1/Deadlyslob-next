@@ -37,7 +37,12 @@ export const Navbar = () => {
         borderWidth={"thin"}
         boxShadow={useColorModeValue("3xl", "2xl")}
       >
-        <NavLayout onClickMenu={onOpen} isMenuOpen={isOpen} onToggleMode={undefined} menuButtonRef={undefined} />
+        <NavLayout
+          onClickMenu={onOpen}
+          isMenuOpen={isOpen}
+          onToggleMode={undefined}
+          menuButtonRef={undefined}
+        />
         <Drawer
           placement="left"
           initialFocusRef={menuButtonRef}
@@ -51,11 +56,30 @@ export const Navbar = () => {
               <NavLayout
                 onClickMenu={onClose}
                 isMenuOpen={isOpen}
-                menuButtonRef={menuButtonRef} onToggleMode={undefined}             />
+                menuButtonRef={menuButtonRef}
+                onToggleMode={undefined}
+              />
             </DrawerHeader>
             <DrawerBody>
               {/* <NavAccordion /> */}
-              <Stack direction={["column", "row"]} py={5}>
+              <VStack py={5} spacing={5}>
+                <Box
+                  //boxShadow={"2xl"}
+                  p={2}
+                  borderRadius={"md"}
+                  borderColor={"white"}
+                  borderWidth={"thin"}
+                  w={"full"}
+                >
+                  <Link href="/">
+                    <Button
+                      aria-current={Router.pathname === "/" ? "page" : "false"}
+                      w={"full"}
+                    >
+                      Home
+                    </Button>
+                  </Link>
+                </Box>
                 <Box
                   //boxShadow={"2xl"}
                   p={2}
@@ -65,10 +89,17 @@ export const Navbar = () => {
                   w={"full"}
                 >
                   <Link href="/Gallery">
-                    <Button w={"full"}>Gallery</Button>
+                    <Button
+                      aria-current={
+                        Router.pathname === "/Gallery" ? "page" : "false"
+                      }
+                      w={"full"}
+                    >
+                      Gallery
+                    </Button>
                   </Link>
                 </Box>
-              </Stack>
+              </VStack>
             </DrawerBody>
           </DrawerContent>
         </Drawer>
