@@ -1,5 +1,11 @@
-import { Box, Center, VStack } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import {
+  Box,
+  Center,
+  Switch,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react";
+import React, { useEffect, useRef, useState } from "react";
 import { TwitchPlayer, TwitchPlayerNonInteractive } from "react-twitch-embed";
 
 const TwitchHome = () => {
@@ -9,6 +15,10 @@ const TwitchHome = () => {
     embed.current = e;
   };
 
+  const [showPreview, setShowPreview] = useState(false);
+  const isDesktop = useBreakpointValue({ base: false, lg: true });
+  const mobile = true ? isDesktop === false : false;
+
   return (
     <Box w={"full"}>
       <Center>
@@ -16,7 +26,7 @@ const TwitchHome = () => {
           borderRadius={"2xl"}
           borderWidth="medium"
           p={3}
-        w={['250px', '600px', 'auto']}
+          w={["250px", "600px", "auto"]}
         >
           <TwitchPlayer
             channel="deadlyslob"
@@ -24,7 +34,6 @@ const TwitchHome = () => {
             muted
             onReady={handleReady}
           />
-         
         </Box>
       </Center>
     </Box>

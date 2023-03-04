@@ -4,22 +4,15 @@ import Layout from "@/Components/UI/Layout";
 import Head from "next/head";
 import { DeadlyTheme } from "@/Components/UI/Theme";
 import { Oswald } from "next/font/google";
-import "@fontsource/josefin-sans"
+import "@fontsource/josefin-sans";
+import Metatags from "@/Components/MetaTags";
 
 const oswald = Oswald({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Deadlyslob - Twitch.tv/Deadlyslob</title>
-        <meta
-          name="description"
-          content="Deadlyslob | Popular content creator and Twitch Streamer"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metatags />
       <ChakraProvider theme={DeadlyTheme}>
         <Layout>
           <main className={oswald.className}>
